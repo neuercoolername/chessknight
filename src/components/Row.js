@@ -16,6 +16,7 @@ export default function Row(props) {
           colNumber={i}
           squareColor={colorRythm === "even" && i % 2 === 0 || colorRythm === "odd" && i % 2 === 1 ? 'white' : 'black'}
           knightPos={props.knightPos}
+          isKnightMove={props.isKnightMove}
         />
       </div>
     );
