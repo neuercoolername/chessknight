@@ -13,7 +13,7 @@ export default function Board () {
         { rows.map((col,i)=>{
     return (
         <div key={i} className={'row'}>
-            {<Row rowValue={rows[i]} />}
+            {<Row rowValue={rows[i]} rowNumber={i}/>}
         </div>
     );
 })}
