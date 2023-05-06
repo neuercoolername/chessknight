@@ -42,7 +42,7 @@ export default function Board() {
       {rows.map((col, i) => {
         return (
           <div key={i} className={"row"}>
-            {<Row rowValue={rows[i]} rowNumber={i} knightPos={knightPos} isKnightMove={isKnightMove} />}
+            {<Row rowValue={rows[i]} rowNumber={i} knightPos={knightPos} isKnightMove={isKnightMove} setKnightPos={setKnightPos} />}
           </div>
         );
       })}

@@ -5,6 +5,10 @@ export default function Square(props) {
 
   console.log(position, isKnightMove)
 
+  const handleKnightMove = () => {
+    props.setKnightPos(position)
+  }
+
   
   return (
     <div
@@ -13,7 +17,7 @@ export default function Square(props) {
       }
       ${isKnightMove ? "whiteFont" : ""}
       `}
-      
+      onClick={isKnightMove ? handleKnightMove : null}
     >
       <h1>{position}</h1>
     </div>
