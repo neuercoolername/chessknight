@@ -1,4 +1,5 @@
 import Row from "./Row";
+import { useState } from "react";
 
 export default function Board () {
     // define rows and cols
@@ -7,13 +8,16 @@ export default function Board () {
 
     // track position of knight
 
+    const [knightPos, setKnightPos] = useState("e6");
+
+
     return (
         <>
         
         { rows.map((col,i)=>{
     return (
         <div key={i} className={'row'}>
-            {<Row rowValue={rows[i]} rowNumber={i}/>}
+            {<Row rowValue={rows[i]} rowNumber={i} knightPos={knightPos}/>}
         </div>
     );
 })}
