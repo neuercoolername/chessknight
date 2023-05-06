@@ -2,11 +2,9 @@ import Row from "./Row";
 import { useState } from "react";
 
 export default function Board() {
-  // define rows and cols
   const rows = ["8", "7", "6", "5", "4", "3", "2", "1"];
   const cols = ["a", "b", "c", "d", "e", "f", "g", "h"];
 
-  // track position of knight
 
   const [knightPos, setKnightPos] = useState("e4");
 
@@ -51,10 +49,9 @@ export default function Board() {
     );
   };
 
-  //   console.log(getKnightMoves())
 
   const isKnightMove = (row, col) => {
-    const knightMoves = getKnightMoves(knightPos);
+    const knightMoves = getKnightMoves();
     return knightMoves.some(
       ({ col: moveCol, row: moveRow }) =>
         moveCol === col && moveRow.toString() === row
@@ -62,14 +59,15 @@ export default function Board() {
   };
 
   return (
-    <>
-      {rows.map((col, i) => {
+    <div className="boardWrapper">
+        <div className='board'>
+      {rows.map((rowValue, rowNumber) => {
         return (
-          <div key={i} className={"row"}>
+          <div key={rowNumber} className={"row"}>
             {
               <Row
-                rowValue={rows[i]}
-                rowNumber={i}
+                rowValue={rowValue}
+                rowNumber={rowNumber}
                 knightPos={knightPos}
                 isKnightMove={isKnightMove}
                 setKnightPos={setKnightPos}
@@ -78,6 +76,8 @@ export default function Board() {
           </div>
         );
       })}
-    </>
+    </div>
+    </div>
+    
   );
 }
