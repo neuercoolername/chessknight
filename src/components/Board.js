@@ -1,6 +1,6 @@
 import Row from "./Row";
 import { useState } from "react";
-import getKnightMoves from "./utilities/getKnightMoves";
+import getKnightMoves from "../utilities/getKnightMoves";
 
 export default function Board() {
   const rows = ["8", "7", "6", "5", "4", "3", "2", "1"];
